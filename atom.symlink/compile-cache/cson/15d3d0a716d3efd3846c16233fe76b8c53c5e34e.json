@@ -1,0 +1,1 @@
+{".text.html":{"class":{"prefix":"cla","body":"class=\"$1\""},"id":{"prefix":"id","body":"id=\"$1\""},"div":{"prefix":"div","body":"<div${1: class=\"$2\"}>\n\t$3\n</div>"}},".source.js":{"Log without ;":{"prefix":"log","body":"console.log($1)"}}}

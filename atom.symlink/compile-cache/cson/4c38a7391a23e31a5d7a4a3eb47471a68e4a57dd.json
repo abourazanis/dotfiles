@@ -1,0 +1,1 @@
+{".platform-darwin":{"cmd-`":"tree-view:toggle"},".platform-darwin atom-text-editor:not([mini])":{"tab":"emmet:expand-abbreviation"},".platform-darwin atom-pane atom-text-editor:not([mini])":{"cmd-/":"editor:toggle-line-comments"},"atom-workspace atom-text-editor":{"ctrl-backspace":"editor:delete-to-previous-word-boundary","ctrl-delete":"editor:delete-to-next-word-boundary"}}

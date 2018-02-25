@@ -1,0 +1,52 @@
+# Your snippets
+#
+# Atom snippets allow you to enter a simple prefix in the editor and hit tab to
+# expand the prefix into a larger code block with templated values.
+#
+# You can create a new snippet in this file by typing 'snip' and then hitting
+# tab.
+#
+# An example CoffeeScript snippet to expand log to console.log:
+#
+# '.source.coffee':
+#   'Console log':
+#     'prefix': 'log'
+#     'body': 'console.log $1'
+#
+# This file uses CoffeeScript Object Notation (CSON).
+# If you are unfamiliar with CSON, you can read more about it here:
+# https://github.com/bevry/cson#what-is-cson
+#
+# ===========================================
+#
+# html snippets
+'.text.html':
+  'class':
+    'prefix': 'cla'
+    'body': 'class=\"$1\"'
+  'id':
+    'prefix': 'id'
+    'body': 'id=\"$1\"'
+  'div':
+    'prefix': 'div'
+    'body': '<div${1: class=\"$2\"}>\n\t$3\n</div>'
+
+'.source.js':
+  'Log without ;':
+    'prefix': 'log'
+    'body': 'console.log(\$1\)'
+
+# css snippets
+# '.source.css':
+#
+#   'background-color: val':
+#     'prefix': 'background',
+#     'body': 'background-color: #${1:DDD};$0'
+
+  # 'float: val':
+  #   'prefix': 'float',
+  #   'body': 'float: ${1:left};$0'
+  #
+  # 'position: val':
+  #   'prefix': 'position:',
+  #   'body': 'position: ${1:absolute};$0'
