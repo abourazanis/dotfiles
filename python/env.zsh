@@ -1,9 +1,8 @@
-# virtualenvwrapper to help manage python environments through virtualenv Lazily
-# loaded (i.e. no tab completion until first run) since I don't code in python
-# much.
-if command -v virtualenvwrapper.sh &>/dev/null; then
+
   export WORKON_HOME=$HOME/.virtualenvs
   export PROJECT_HOME=$HOME/Development
-  export VIRTUALENVWRAPPER_SCRIPT=`which virtualenvwrapper.sh`
-  source virtualenvwrapper_lazy.sh
-fi
+  [ -f /usr/local/bin/virtualenvwrapper.sh ] && source /usr/local/bin/virtualenvwrapper.sh
+
+# Appengine paths
+source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc'
+source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc'
