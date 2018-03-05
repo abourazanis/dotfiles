@@ -5,3 +5,4 @@ source "https://rubygems.org"
 ruby RUBY_VERSION
 
 gem "sass", ">= 3.5.5"
+gem "cocoapods"
