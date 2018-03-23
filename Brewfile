@@ -87,3 +87,7 @@ cask 'skype'
 cask 'spotify'
 cask 'daisydisk'
 cask 'cheatsheet'
+cask 'visual-studio-code'
+
+# Android sdk requirement
+cask 'java8'
