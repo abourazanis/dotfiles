@@ -534,7 +534,7 @@ done
 # Add new app shortcuts to the dock.
 for app in "Google Chrome" "Firefox" "Transmission" "Slack" \
     "WhatsApp" "Viber" "VLC" "Spotify" "iTerm" "SourceTree" \
-    "Atom" "Xcode"; do
+    "Xcode"; do
     dockutil --find "${app}"
     if [ $? -ne 0 ]; then
         dockutil --add "/Applications/${app}.app" --replacing "${app}" --no-restart

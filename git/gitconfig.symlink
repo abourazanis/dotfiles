@@ -4,8 +4,8 @@
 [hub]
         protocol = https
 [user]
-        name = a.bourazanis
-        email = a.bourazanis@gmail.com
+	name = a.bourazanis
+	email = a.bourazanis@gmail.com
 [credential]
         helper = osxkeychain
 [alias]
@@ -61,3 +61,5 @@
 [mergetool "sourcetree"]
 	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
 	trustExitCode = true
+[commit]
+	template = /Users/anastasis/.stCommitMsg
