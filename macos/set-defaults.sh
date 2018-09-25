@@ -249,7 +249,7 @@ sudo systemsetup -settimezone "Europe/Athens" > /dev/null
 sudo systemsetup -setnetworktimeserver "time.euro.apple.com"
 sudo systemsetup -setusingnetworktime on
 
-# Do not set timezone automatticaly depending on location.
+# Do not set timezone automaticaly depending on location.
 sudo defaults write /Library/Preferences/com.apple.timezone.auto.plist Active -bool false
 
 # Stop iTunes from responding to the keyboard media keys
@@ -343,7 +343,7 @@ defaults write com.apple.finder ShowMountedServersOnDesktop -bool true
 defaults write com.apple.finder ShowRemovableMediaOnDesktop -bool true
 
 # Finder: show hidden files by default
-defaults write com.apple.finder AppleShowAllFiles -bool true
+defaults write com.apple.finder AppleShowAllFiles -bool false
 
 # Finder: show all filename extensions
 defaults write NSGlobalDomain AppleShowAllExtensions -bool true
@@ -499,9 +499,9 @@ defaults write com.apple.dock showhidden -bool true
 # Reset Launchpad, but keep the desktop wallpaper intact
 find "${HOME}/Library/Application Support/Dock" -name "*-*.db" -maxdepth 1 -delete
 
-# Add iOS & Watch Simulator to Launchpad
-sudo ln -sf "/Applications/Xcode.app/Contents/Developer/Applications/Simulator.app" "/Applications/Simulator.app"
-sudo ln -sf "/Applications/Xcode.app/Contents/Developer/Applications/Simulator (Watch).app" "/Applications/Simulator (Watch).app"
+# # Add iOS & Watch Simulator to Launchpad
+# sudo ln -sf "/Applications/Xcode.app/Contents/Developer/Applications/Simulator.app" "/Applications/Simulator.app"
+# sudo ln -sf "/Applications/Xcode.app/Contents/Developer/Applications/Simulator (Watch).app" "/Applications/Simulator (Watch).app"
 
 # Add a spacer to the left side of the Dock (where the applications are)
 #defaults write com.apple.dock persistent-apps -array-add '{tile-data={}; tile-type="spacer-tile";}'
@@ -526,7 +526,7 @@ defaults write com.apple.dock wvous-br-modifier -int 0
 
 # Remove apps I don't use from the dock.
 for shortcut_label in "Launchpad" "Calendar" "Contacts" "Mail" \
-    "Safari" "Siri" "Maps" "FaceTime" "iTunes" "iBooks" "Reminders" \
+     "Siri" "Maps" "FaceTime" "iTunes" "iBooks" "Reminders" \
     "Photos" "Messages" "Numbers" "Pages"; do
     dockutil --remove "${shortcut_label}" --allhomes --no-restart
 done
@@ -909,7 +909,7 @@ defaults write com.google.Chrome PMPrintingExpandedStateForPrint2 -bool true
 # Transmission.app                                                            #
 ###############################################################################
 
-# Use `~/Documents/Torrents` to store incomplete downloads
+# Use `~/Downloads/Torrents` to store incomplete downloads
 defaults write org.m0k.transmission UseIncompleteDownloadFolder -bool true
 defaults write org.m0k.transmission IncompleteDownloadFolder -string "${HOME}/Downloads/torrents"
 
