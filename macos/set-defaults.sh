@@ -525,15 +525,15 @@ defaults write com.apple.dock wvous-br-corner -int 5
 defaults write com.apple.dock wvous-br-modifier -int 0
 
 # Remove apps I don't use from the dock.
-for shortcut_label in "Launchpad" "Calendar" "Contacts" "Mail" \
+for shortcut_label in "Launchpad" "Calendar" "Contacts"  \
      "Siri" "Maps" "FaceTime" "iTunes" "iBooks" "Reminders" \
     "Photos" "Messages" "Numbers" "Pages"; do
     dockutil --remove "${shortcut_label}" --allhomes --no-restart
 done
 
 # Add new app shortcuts to the dock.
-for app in "Google Chrome" "Firefox" "Transmission" "Slack" \
-    "WhatsApp" "Viber" "VLC" "Spotify" "iTerm" "SourceTree" \
+for app in "Mail" "Google Chrome" "Firefox" "Transmission" "Slack" \
+    "WhatsApp" "Viber" "VLC" "Spotify" "iTerm" "Fork" \
     "Xcode"; do
     dockutil --find "${app}"
     if [ $? -ne 0 ]; then
