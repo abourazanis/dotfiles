@@ -26,7 +26,7 @@ There's a few special files in the hierarchy.
 ## install
 
 ``` bash
-$ git clone https://github.com/jacobwg/dotfiles.git ~/.dotfiles
+$ git clone https://github.com/abourazanis/dotfiles~/.dotfiles
 $ cd ~/.dotfiles
 $ script/bootstrap
 ```
