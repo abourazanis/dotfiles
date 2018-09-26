@@ -52,7 +52,7 @@
 [mergetool]
 	prompt = false
 [merge]
-	tool = Kaleidoscope
+	tool = opendiff
 [github]
 	user = a.bourazanis
 [difftool "sourcetree"]
