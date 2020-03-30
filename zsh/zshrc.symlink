@@ -1,14 +1,18 @@
-# If profiling is enabled, collect timing information
-if [ ! -z "$ZSH_PROF" ]; then
-  zmodload zsh/zprof
-fi
-
 # shortcut to this dotfiles path is $ZSH
 export ZSH=$HOME/.dotfiles
 
+
+# Stash your environment variables in ~/.localrc. This means they'll stay out
+# of your main dotfiles repository (which may be public, like this one), but
+# you'll have access to them in your scripts.
+if [[ -a ~/.localrc ]]
+then
+  source ~/.localrc
+fi
+
 # all of our zsh files
 typeset -U config_files
-config_files=($ZSH/*/*.zsh)
+config_files=($ZSH/**/*.zsh)
 
 # load the path files
 for file in ${(M)config_files:#*/path.zsh}
@@ -22,16 +26,9 @@ do
   source $file
 done
 
-# use .localrc for SUPER SECRET STUFF that you don't
-# want in your public, versioned repo.
-if [[ -a ~/.localrc ]]
-then
-  source ~/.localrc
-fi
-
 # initialize autocomplete here, otherwise functions won't be loaded
-#autoload -U compinit
-#compinit
+autoload -U compinit
+compinit
 
 # load every completion after autocomplete loads
 for file in ${(M)config_files:#*/completion.zsh}
@@ -41,50 +38,14 @@ done
 
 unset config_files
 
-# ZPLUG env
-export ZPLUG_HOME=/usr/local/opt/zplug
-source $ZPLUG_HOME/init.zsh
-
-#############################################
-#               Plugins
-#############################################
-
-# ruby
-zplug "plugins/rvm",            from:oh-my-zsh, lazy:1
-
-[ -z "${PIPENV_ACTIVE}" ] && {
-    zplug "plugins/virtualenvwrapper", from:oh-my-zsh
-}
-
-# nodejs
-## lazy loading is around 70x faster
-export NVM_LAZY_LOAD=true
-zplug "lukechilds/zsh-nvm"
-
-
-zplug "zsh-users/zsh-history-substring-search"
-zplug "zsh-users/zsh-syntax-highlighting", defer:2
-
-zplug mafredri/zsh-async, from:github
-
-
-# Install packages that have not been installed yet
-if ! zplug check --verbose; then
-    printf "Install? [y/N]: "
-    if read -q; then
-        echo; zplug install
-    else
-        echo
-    fi
-fi
-
-# Then, source plugins and add commands to $PATH
-zplug load
-
-# If profiling is enabled, display timing information
-if [ ! -z "$ZSH_PROF" ]; then
-  zprof
-fi
+# Better history
+# Credits to https://coderwall.com/p/jpj_6q/zsh-better-history-searching-with-arrow-keys
+autoload -U up-line-or-beginning-search
+autoload -U down-line-or-beginning-search
+zle -N up-line-or-beginning-search
+zle -N down-line-or-beginning-search
+bindkey "^[[A" up-line-or-beginning-search # Up
+bindkey "^[[B" down-line-or-beginning-search # Down
 
 # Set Spaceship ZSH as a prompt
 autoload -U promptinit; promptinit
