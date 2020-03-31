@@ -63,7 +63,7 @@ cask 'visual-studio-code'
 cask 'evernote'
 cask 'zoomus'
 cask 'pycharm'
-casl 'libreoffice'
+cask 'libreoffice'
 
 # Quicklook
 cask 'qlcolorcode'
